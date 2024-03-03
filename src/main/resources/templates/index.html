@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Number Form</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        form {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .result {
+        }
+    </style>
+</head>
+<body>
+<form action="#" th:action="@{/api/convert}" method="post">
+    <h1>Chuyển đổi số sang chữ</h1>
+    Nhập số: <input type="text" name="number" required>
+    <button type="submit">Chuyển đổi</button>
+</form>
+<div class="result" th:if="${result}">
+    <p id="result" th:text="${result}"></p>
+</div>
+</body>
+</html>
